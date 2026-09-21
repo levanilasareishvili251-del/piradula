@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>პირადულა</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+<h1>პირადულა</h1>
+<p class="muted">ონლაინ ბუზერის თამაში</p>
+
+<section id="home" class="card">
+<h2>დაწყება</h2>
+<input id="name" placeholder="შენი სახელი">
+<button onclick="createGame()">🎤 ახალი თამაში</button>
+<button class="light" onclick="showJoin()">🔢 თამაშში შესვლა</button>
+</section>
+
+<section id="join" class="card hidden">
+<h2>თამაშში შესვლა</h2>
+<input id="joinCode" inputmode="numeric" maxlength="6" placeholder="6-ნიშნა კოდი">
+<input id="joinName" placeholder="შენი სახელი">
+<button onclick="joinGame()">შესვლა</button>
+<button class="light" onclick="home()">უკან</button>
+</section>
+
+<section id="game" class="hidden">
+<div class="card top"><span>კოდი: <b id="code"></b></span><span>რაუნდი: <b id="round"></b></span></div>
+
+<section id="playerPanel" class="card hidden">
+<h2>შენი ადგილი</h2>
+<div id="rank" class="rank">დაჭირე BUZZ-ს!</div>
+<button id="buzz" class="buzz" onclick="buzz()">BUZZ!</button>
+</section>
+
+<section id="hostPanel" class="card hidden">
+<h2>წამყვანი</h2>
+<div id="order"></div>
+<h3>ქულების მართვა</h3>
+<div id="scores"></div>
+<button onclick="nextRound()">➡️ ახალი რაუნდი</button>
+<button class="light" onclick="resetScores()">🧹 ქულების განულება</button>
+</section>
+
+<section class="card">
+<h2>ლიდერბორდი</h2>
+<div id="leaderboard"></div>
+</section>
+</section>
+
+<p id="error"></p>
+</main>
+<script src="/script.js"></script>
+</body>
+</html>
